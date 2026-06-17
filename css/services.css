@@ -1,0 +1,107 @@
+/* ===================================================
+   services.css — Services Page Styles
+   Includes: services section layout, service cards,
+             icons, hover effects, learn-more button
+   Requires: styles.css
+   =================================================== */
+
+
+/* ─── Services Section ───────────────────────────── */
+#services {
+  padding: 6rem 0;
+  background: var(--gray-50);
+}
+
+
+/* ─── Service Card ───────────────────────────────── */
+.service-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated top-border accent on hover */
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--blue-500);
+  transform: scaleX(0);
+  transition: transform var(--transition);
+  transform-origin: left;
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--blue-200);
+}
+
+
+/* ─── Service Icon ───────────────────────────────── */
+.service-icon {
+  width: 56px;
+  height: 56px;
+  background: var(--blue-50);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 1.2rem;
+  transition: background var(--transition);
+}
+
+.service-card:hover .service-icon {
+  background: var(--blue-100);
+}
+
+
+/* ─── Service Copy ───────────────────────────────── */
+.service-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--blue-900);
+  margin-bottom: 0.6rem;
+  font-family: var(--font-body);
+}
+
+.service-desc {
+  font-size: 0.88rem;
+  color: var(--gray-500);
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+}
+
+
+/* ─── Learn More Button ──────────────────────────── */
+.service-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: var(--blue-500);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: gap var(--transition), color var(--transition);
+}
+
+.service-btn:hover {
+  gap: 10px;
+  color: var(--blue-700);
+}

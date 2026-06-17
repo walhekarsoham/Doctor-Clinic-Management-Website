@@ -1,0 +1,120 @@
+/* ===================================================
+   about.css — About Page Styles
+   Includes: about section layout, image wrapper,
+             experience badge, tags, counters
+   Requires: styles.css
+   =================================================== */
+
+
+/* ─── About Section ──────────────────────────────── */
+#about {
+  padding: 6rem 0;
+  background: var(--white);
+}
+
+
+/* ─── About Image ────────────────────────────────── */
+.about-img-wrap {
+  position: relative;
+}
+
+.about-img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  aspect-ratio: 4/5;
+  background: var(--blue-100);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+
+/* ─── Experience Badge ───────────────────────────── */
+.about-badge {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: var(--blue-600);
+  color: var(--white);
+  border-radius: var(--radius-md);
+  padding: 1.2rem 1.5rem;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  min-width: 130px;
+}
+
+.about-badge-num {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.about-badge-text {
+  font-size: 0.8rem;
+  opacity: 0.85;
+  margin-top: 4px;
+}
+
+
+/* ─── About Content ──────────────────────────────── */
+.about-content {
+  padding-left: 2rem;
+}
+
+/* ─── Specialty Tags ─────────────────────────────── */
+.about-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 1.5rem 0;
+}
+
+.about-tag {
+  background: var(--blue-50);
+  color: var(--blue-600);
+  border: 1px solid var(--blue-200);
+  border-radius: var(--radius-xl);
+  padding: 0.3rem 0.9rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+
+/* ─── Counters ───────────────────────────────────── */
+.counters-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.counter-box {
+  text-align: center;
+}
+
+.counter-num {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--blue-700);
+}
+
+.counter-label {
+  font-size: 0.8rem;
+  color: var(--gray-500);
+  margin-top: 4px;
+}
+
+
+/* ─── Responsive ─────────────────────────────────── */
+@media (max-width: 991px) {
+  .about-badge { right: 0; bottom: -10px; }
+}
+
+@media (max-width: 768px) {
+  .about-content  { padding-left: 0; margin-top: 3rem; }
+  .counters-row   { grid-template-columns: repeat(2, 1fr); }
+}

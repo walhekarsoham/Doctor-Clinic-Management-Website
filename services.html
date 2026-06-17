@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services - Dr. John Smith</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏥</text></svg>">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/services.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+<body>
+
+<div id="nav-placeholder"></div>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-breadcrumb"><a href="index.html" data-i18n="nav_home">Home</a> / <span data-i18n="nav_services">Services</span></div>
+    <h1 class="page-hero-title" data-i18n="services_page_title">Our Medical Services</h1>
+    <p class="page-hero-sub" data-i18n="services_page_sub">Comprehensive care across 15+ specializations under one roof</p>
+  </div>
+</section>
+
+<section style="padding:5rem 0;background:var(--white);">
+  <div class="container">
+    <div class="d-flex flex-wrap gap-2 mb-5 justify-content-center">
+      <button class="btn-primary-blue" id="filter-all" onclick="filterServices('all', this)" style="padding:0.5rem 1.3rem;font-size:0.85rem;" data-i18n="services_filter_all">All Services</button>
+      <button class="btn-outline-blue" id="filter-heart" onclick="filterServices('heart', this)" style="padding:0.5rem 1.3rem;font-size:0.85rem;" data-i18n="services_filter_heart">Heart & Vascular</button>
+      <button class="btn-outline-blue" id="filter-neuro" onclick="filterServices('neuro', this)" style="padding:0.5rem 1.3rem;font-size:0.85rem;" data-i18n="services_filter_neuro">Neurology</button>
+      <button class="btn-outline-blue" id="filter-primary" onclick="filterServices('primary', this)" style="padding:0.5rem 1.3rem;font-size:0.85rem;" data-i18n="services_filter_primary">Primary Care</button>
+      <button class="btn-outline-blue" id="filter-surgical" onclick="filterServices('surgical', this)" style="padding:0.5rem 1.3rem;font-size:0.85rem;" data-i18n="services_filter_surgical">Surgical</button>
+    </div>
+
+    <div class="row g-4 gsap-stagger" id="services-grid">
+      <div class="col-md-6 col-lg-4 service-item" data-cat="heart">
+        <div class="service-card h-100">
+          <div class="service-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+          <div class="service-title" data-i18n="service_cardiology_title">Cardiology</div>
+          <div class="service-desc" data-i18n="services_cardiology_desc_long">Comprehensive heart care including ECG, echocardiography, Holter monitoring, and cardiac stress testing performed by ACC-certified cardiologists.</div>
+          <ul style="font-size:0.83rem;color:var(--gray-500);margin-bottom:1rem;padding-left:1rem;">
+            <li data-i18n="services_cardiology_item_1">Electrocardiogram (ECG/EKG)</li>
+            <li data-i18n="services_cardiology_item_2">Echocardiography</li>
+            <li data-i18n="services_cardiology_item_3">Cardiac Stress Testing</li>
+            <li data-i18n="services_cardiology_item_4">Heart Failure Management</li>
+          </ul>
+          <button class="service-btn" onclick="window.location.href='schedule.html'"><span data-i18n="common_book_now">Book Now</span> <span>→</span></button>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 service-item" data-cat="heart">
+        <div class="service-card h-100">
+          <div class="service-icon"><i class="fa-solid fa-droplet"></i></div>
+          <div class="service-title" data-i18n="service_vascular_title">Vascular Medicine</div>
+          <div class="service-desc" data-i18n="services_vascular_desc">Diagnosis and treatment of disorders affecting the arterial, venous, and lymphatic systems including peripheral artery disease and varicose veins.</div>
+          <ul style="font-size:0.83rem;color:var(--gray-500);margin-bottom:1rem;padding-left:1rem;">
+            <li data-i18n="services_vascular_item_1">Carotid Artery Duplex</li>
+            <li data-i18n="services_vascular_item_2">Peripheral Vascular Studies</li>
+            <li data-i18n="services_vascular_item_3">Venous Insufficiency</li>
+            <li data-i18n="services_vascular_item_4">Varicose Vein Treatment</li>
+          </ul>
+          <button class="service-btn" onclick="window.location.href='schedule.html'"><span data-i18n="common_book_now">Book Now</span> <span>→</span></button>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 service-item" data-cat="neuro">
+        <div class="service-card h-100">
+          <div class="service-icon"><i class="fa-solid fa-brain"></i></div>
+          <div class="service-title" data-i18n="service_neurology_title">Neurology</div>
+          <div class="service-desc" data-i18n="services_neurology_desc_long">Advanced neurological evaluations and treatment for headaches, epilepsy, stroke, movement disorders, and neurodegenerative diseases.</div>
+          <ul style="font-size:0.83rem;color:var(--gray-500);margin-bottom:1rem;padding-left:1rem;">
+            <li data-i18n="services_neurology_item_1">EEG & Brain Mapping</li>
+            <li data-i18n="services_neurology_item_2">Migraine Management</li>
+            <li data-i18n="services_neurology_item_3">Epilepsy Treatment</li>
+            <li data-i18n="services_neurology_item_4">Memory & Cognitive Testing</li>
+          </ul>
+          <button class="service-btn" onclick="window.location.href='schedule.html'"><span data-i18n="common_book_now">Book Now</span> <span>→</span></button>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 service-item" data-cat="primary">
+        <div class="service-card h-100">
+          <div class="service-icon"><i class="fa-solid fa-stethoscope"></i></div>
+          <div class="service-title" data-i18n="service_general_medicine_title">General Medicine</div>
+          <div class="service-desc" data-i18n="services_general_medicine_desc_long">Preventive care, annual physicals, and comprehensive management of chronic conditions for patients of all ages.</div>
+          <ul style="font-size:0.83rem;color:var(--gray-500);margin-bottom:1rem;padding-left:1rem;">
+            <li data-i18n="services_general_medicine_item_1">Annual Physical Exams</li>
+            <li data-i18n="services_general_medicine_item_2">Diabetes Management</li>
+            <li data-i18n="services_general_medicine_item_3">Hypertension Control</li>
+            <li data-i18n="services_general_medicine_item_4">Preventive Screenings</li>
+          </ul>
+          <button class="service-btn" onclick="window.location.href='schedule.html'"><span data-i18n="common_book_now">Book Now</span> <span>→</span></button>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 service-item" data-cat="primary">
+        <div class="service-card h-100">
+          <div class="service-icon"><i class="fa-solid fa-baby"></i></div>
+          <div class="service-title" data-i18n="service_pediatrics_title">Pediatrics</div>
+          <div class="service-desc" data-i18n="services_pediatrics_desc_long">Specialized healthcare for infants, children, and adolescents in a child-friendly, welcoming environment.</div>
+          <ul style="font-size:0.83rem;color:var(--gray-500);margin-bottom:1rem;padding-left:1rem;">
+            <li data-i18n="services_pediatrics_item_1">Well-Child Visits</li>
+            <li data-i18n="services_pediatrics_item_2">Immunizations & Vaccines</li>
+            <li data-i18n="services_pediatrics_item_3">Childhood Illness Care</li>
+            <li data-i18n="services_pediatrics_item_4">Growth & Development</li>
+          </ul>
+          <button class="service-btn" onclick="window.location.href='schedule.html'"><span data-i18n="common_book_now">Book Now</span> <span>→</span></button>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 service-item" data-cat="surgical">
+        <div class="service-card h-100">
+          <div class="service-icon"><i class="fa-solid fa-bone"></i></div>
+          <div class="service-title" data-i18n="service_orthopedics_title">Orthopedics</div>
+          <div class="service-desc" data-i18n="services_orthopedics_desc_long">Expert care for bone, joint, and musculoskeletal conditions including minimally invasive surgical procedures.</div>
+          <ul style="font-size:0.83rem;color:var(--gray-500);margin-bottom:1rem;padding-left:1rem;">
+            <li data-i18n="services_orthopedics_item_1">Joint Replacement</li>
+            <li data-i18n="services_orthopedics_item_2">Sports Medicine</li>
+            <li data-i18n="services_orthopedics_item_3">Fracture Care</li>
+            <li data-i18n="services_orthopedics_item_4">Physical Therapy</li>
+          </ul>
+          <button class="service-btn" onclick="window.location.href='schedule.html'"><span data-i18n="common_book_now">Book Now</span> <span>→</span></button>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 service-item" data-cat="primary">
+        <div class="service-card h-100">
+          <div class="service-icon"><i class="fa-solid fa-eye"></i></div>
+          <div class="service-title" data-i18n="service_ophthalmology_title">Ophthalmology</div>
+          <div class="service-desc" data-i18n="services_ophthalmology_desc_long">Complete eye care from routine vision exams to advanced surgical procedures using state-of-the-art technology.</div>
+          <ul style="font-size:0.83rem;color:var(--gray-500);margin-bottom:1rem;padding-left:1rem;">
+            <li data-i18n="services_ophthalmology_item_1">Comprehensive Eye Exams</li>
+            <li data-i18n="services_ophthalmology_item_2">Cataract Surgery</li>
+            <li data-i18n="services_ophthalmology_item_3">Glaucoma Management</li>
+            <li data-i18n="services_ophthalmology_item_4">LASIK Consultation</li>
+          </ul>
+          <button class="service-btn" onclick="window.location.href='schedule.html'"><span data-i18n="common_book_now">Book Now</span> <span>→</span></button>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 service-item" data-cat="surgical">
+        <div class="service-card h-100">
+          <div class="service-icon"><i class="fa-solid fa-microscope"></i></div>
+          <div class="service-title" data-i18n="service_lab_title">Laboratory & Diagnostics</div>
+          <div class="service-desc" data-i18n="services_lab_desc">In-house laboratory services with rapid results for blood work, urinalysis, cultures, and specialized diagnostic panels.</div>
+          <ul style="font-size:0.83rem;color:var(--gray-500);margin-bottom:1rem;padding-left:1rem;">
+            <li data-i18n="services_lab_item_1">Complete Blood Count (CBC)</li>
+            <li data-i18n="services_lab_item_2">Metabolic Panels</li>
+            <li data-i18n="services_lab_item_3">Thyroid Function Tests</li>
+            <li data-i18n="services_lab_item_4">COVID-19 Testing</li>
+          </ul>
+          <button class="service-btn" onclick="window.location.href='schedule.html'"><span data-i18n="common_book_now">Book Now</span> <span>→</span></button>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 service-item" data-cat="neuro">
+        <div class="service-card h-100">
+          <div class="service-icon"><i class="fa-solid fa-peace"></i></div>
+          <div class="service-title" data-i18n="service_mental_health_title">Mental Health</div>
+          <div class="service-desc" data-i18n="services_mental_health_desc">Holistic mental health support including counseling, psychiatric evaluations, and integrated behavioral health programs.</div>
+          <ul style="font-size:0.83rem;color:var(--gray-500);margin-bottom:1rem;padding-left:1rem;">
+            <li data-i18n="services_mental_health_item_1">Anxiety & Depression</li>
+            <li data-i18n="services_mental_health_item_2">Psychiatric Evaluation</li>
+            <li data-i18n="services_mental_health_item_3">Medication Management</li>
+            <li data-i18n="services_mental_health_item_4">Telehealth Counseling</li>
+          </ul>
+          <button class="service-btn" onclick="window.location.href='schedule.html'"><span data-i18n="common_book_now">Book Now</span> <span>→</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:5rem 0;background:var(--blue-50);">
+  <div class="container">
+    <div class="text-center mb-5 gsap-reveal">
+      <div class="section-label mx-auto" style="justify-content:center;" data-i18n="services_why_us_label">Why Us</div>
+      <h2 class="section-title" data-i18n="services_why_us_title">Why Patients Choose Our Clinic</h2>
+    </div>
+    <div class="row g-4 gsap-stagger">
+      <div class="col-md-6 col-lg-3 text-center">
+        <div style="font-size:2.5rem;margin-bottom:1rem;"><i class="fa-solid fa-bolt"></i></div>
+        <h5 style="font-family:var(--font-body);font-weight:700;color:var(--blue-900);" data-i18n="services_feature_title_1">Same-Day Appointments</h5>
+        <p style="font-size:0.88rem;color:var(--gray-500);" data-i18n="services_feature_desc_1">We prioritize urgent care needs with same-day slots available Monday through Friday.</p>
+      </div>
+      <div class="col-md-6 col-lg-3 text-center">
+        <div style="font-size:2.5rem;margin-bottom:1rem;"><i class="fa-solid fa-laptop"></i></div>
+        <h5 style="font-family:var(--font-body);font-weight:700;color:var(--blue-900);" data-i18n="services_feature_title_2">Telehealth Available</h5>
+        <p style="font-size:0.88rem;color:var(--gray-500);" data-i18n="services_feature_desc_2">Consult from the comfort of your home via our secure, HIPAA-compliant video platform.</p>
+      </div>
+      <div class="col-md-6 col-lg-3 text-center">
+        <div style="font-size:2.5rem;margin-bottom:1rem;"><i class="fa-solid fa-lock"></i></div>
+        <h5 style="font-family:var(--font-body);font-weight:700;color:var(--blue-900);" data-i18n="services_feature_title_3">HIPAA Compliant</h5>
+        <p style="font-size:0.88rem;color:var(--gray-500);" data-i18n="services_feature_desc_3">Your medical records and personal data are protected with enterprise-grade security.</p>
+      </div>
+      <div class="col-md-6 col-lg-3 text-center">
+        <div style="font-size:2.5rem;margin-bottom:1rem;"><i class="fa-solid fa-globe"></i></div>
+        <h5 style="font-family:var(--font-body);font-weight:700;color:var(--blue-900);" data-i18n="services_feature_title_4">Multilingual Staff</h5>
+        <p style="font-size:0.88rem;color:var(--gray-500);" data-i18n="services_feature_desc_4">We serve patients in English, Marathi, Spanish, and Mandarin for inclusive healthcare.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/components.js"></script>
+<script>
+function filterServices(cat, btn) {
+  document.querySelectorAll('[id^="filter-"]').forEach(b => {
+    b.className = 'btn-outline-blue';
+    b.style.cssText = 'padding:0.5rem 1.3rem;font-size:0.85rem;';
+  });
+  btn.className = 'btn-primary-blue';
+  btn.style.cssText = 'padding:0.5rem 1.3rem;font-size:0.85rem;';
+
+  document.querySelectorAll('.service-item').forEach(item => {
+    if (cat === 'all' || item.dataset.cat === cat) {
+      item.style.display = '';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+}
+</script>
+</body>
+</html>

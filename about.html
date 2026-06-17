@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Dr. John Smith</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏥</text></svg>">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/blog.css">
+</head>
+<body>
+
+<div id="nav-placeholder"></div>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-breadcrumb"><a href="index.html" data-i18n="nav_home">Home</a> / <span data-i18n="nav_about">About</span></div>
+    <h1 class="page-hero-title" data-i18n="about_page_title">About Dr. John Smith</h1>
+    <p class="page-hero-sub" data-i18n="about_page_sub">Board-Certified Physician · 20+ Years of Excellence</p>
+  </div>
+</section>
+
+<section style="padding:6rem 0;background:var(--white);">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-5">
+        <div class="about-img-wrap">
+          <div class="about-img" style="aspect-ratio:4/5;">
+            <div style="font-size:10rem;color:var(--blue-400);display:flex;align-items:flex-end;height:100%;justify-content:center;width:100%;"><img src="assets/doctor.png" alt="doctor"></div>
+          </div>
+          <div class="about-badge">
+            <div class="about-badge-num" data-i18n="about_badge_degree">MD</div>
+            <div class="about-badge-text" data-i18n="about_badge_text">Harvard Medical School</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <div class="about-content">
+          <div class="section-label" data-i18n="about_meet_label">Meet the Doctor</div>
+          <h2 class="section-title" data-i18n="about_doctor_name">Dr. John Smith, MD, FACC</h2>
+          <p class="text-secondary mb-3" data-i18n="about_intro_p1">Dr. John Smith is a distinguished board-certified physician specializing in Internal Medicine and Cardiology. With over two decades of clinical experience, he has dedicated his career to providing exceptional, evidence-based healthcare to thousands of patients.</p>
+          <p class="text-secondary mb-4" data-i18n="about_intro_p2">He completed his undergraduate studies at Yale University before earning his medical degree from Harvard Medical School with highest honors. His residency and fellowship training at Johns Hopkins Hospital gave him specialized expertise in complex cardiac conditions and preventive medicine.</p>
+
+          <div class="about-tags">
+            <span class="about-tag" data-i18n="about_tag_harvard">🎓 Harvard Medical School</span>
+            <span class="about-tag" data-i18n="about_tag_hopkins">🏥 Johns Hopkins Residency</span>
+            <span class="about-tag" data-i18n="about_tag_facc">🫀 Cardiology Fellow (FACC)</span>
+            <span class="about-tag" data-i18n="about_tag_research">🔬 Research Published</span>
+            <span class="about-tag" data-i18n="about_tag_award">🏆 Top Doctor Award 2023</span>
+          </div>
+
+          <div class="counters-row mt-4">
+            <div class="counter-box">
+              <div class="counter-num" data-counter data-target="100000" data-suffix="+">0</div>
+              <div class="counter-label" data-i18n="common_patients_treated">Patients Treated</div>
+            </div>
+            <div class="counter-box">
+              <div class="counter-num" data-counter data-target="20" data-suffix="+">0</div>
+              <div class="counter-label" data-i18n="common_years_experience">Years Experience</div>
+            </div>
+            <div class="counter-box">
+              <div class="counter-num" data-counter data-target="47" data-suffix="">0</div>
+              <div class="counter-label" data-i18n="common_publications">Publications</div>
+            </div>
+          </div>
+          <a href="schedule.html" class="btn-primary-blue mt-3" data-i18n="about_book_appointment">Book an Appointment →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:5rem 0;background:var(--gray-50);">
+  <div class="container">
+    <div class="text-center mb-5 gsap-reveal">
+      <div class="section-label mx-auto" style="justify-content:center;" data-i18n="about_credentials_label">Credentials</div>
+      <h2 class="section-title" data-i18n="about_education_title">Education & Training</h2>
+    </div>
+    <div class="row g-4 gsap-stagger">
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card text-center h-100">
+          <div class="service-icon mx-auto mb-3" style="font-size:2rem;">🎓</div>
+          <div style="font-size:0.75rem;color:var(--blue-500);font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;" data-i18n="about_education_year_1">2000 - 2004</div>
+          <div class="service-title" data-i18n="about_education_title_1">Medical Degree (MD)</div>
+          <div class="service-desc" data-i18n="about_education_desc_1">Harvard Medical School, Boston, MA. Graduated with Distinction.</div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card text-center h-100">
+          <div class="service-icon mx-auto mb-3" style="font-size:2rem;">🏥</div>
+          <div style="font-size:0.75rem;color:var(--blue-500);font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;" data-i18n="about_education_year_2">2004 - 2007</div>
+          <div class="service-title" data-i18n="about_education_title_2">Internal Medicine Residency</div>
+          <div class="service-desc" data-i18n="about_education_desc_2">Johns Hopkins Hospital, Baltimore, MD. Chief Resident, final year.</div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card text-center h-100">
+          <div class="service-icon mx-auto mb-3" style="font-size:2rem;">🫀</div>
+          <div style="font-size:0.75rem;color:var(--blue-500);font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;" data-i18n="about_education_year_3">2007 - 2009</div>
+          <div class="service-title" data-i18n="about_education_title_3">Cardiology Fellowship</div>
+          <div class="service-desc" data-i18n="about_education_desc_3">Mayo Clinic, Rochester, MN. FACC designation awarded in 2009.</div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="service-card text-center h-100">
+          <div class="service-icon mx-auto mb-3" style="font-size:2rem;">🏆</div>
+          <div style="font-size:0.75rem;color:var(--blue-500);font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;" data-i18n="about_education_year_4">2009 - Present</div>
+          <div class="service-title" data-i18n="about_education_title_4">Private Practice</div>
+          <div class="service-desc" data-i18n="about_education_desc_4">Founder & Chief of Medicine, Dr. John Smith Medical Clinic.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:5rem 0;background:var(--white);">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6 gsap-reveal">
+        <div class="section-label" data-i18n="about_recognition_label">Recognition</div>
+        <h2 class="section-title" data-i18n="about_awards_title">Awards & Achievements</h2>
+        <p class="text-secondary mb-4" data-i18n="about_awards_intro">Dr. Smith's commitment to excellence has been recognized by leading medical organizations and patient advocacy groups across the nation.</p>
+        <div class="d-flex flex-column gap-3">
+          <div style="display:flex;align-items:center;gap:1rem;padding:1rem;background:var(--blue-50);border-radius:12px;border:1px solid var(--blue-100);">
+            <div style="font-size:1.8rem;flex-shrink:0;">🏆</div>
+            <div>
+              <div style="font-weight:700;color:var(--blue-900);font-size:0.95rem;" data-i18n="about_award_title_1">Top Doctor Award 2023</div>
+              <div style="font-size:0.82rem;color:var(--gray-500);" data-i18n="about_award_desc_1">U.S. News & World Report - Cardiology</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:1rem;padding:1rem;background:var(--blue-50);border-radius:12px;border:1px solid var(--blue-100);">
+            <div style="font-size:1.8rem;flex-shrink:0;">⭐</div>
+            <div>
+              <div style="font-weight:700;color:var(--blue-900);font-size:0.95rem;" data-i18n="about_award_title_2">Patient Choice Award 2022</div>
+              <div style="font-size:0.82rem;color:var(--gray-500);" data-i18n="about_award_desc_2">Vitals.com - 5 consecutive years</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:1rem;padding:1rem;background:var(--blue-50);border-radius:12px;border:1px solid var(--blue-100);">
+            <div style="font-size:1.8rem;flex-shrink:0;">🔬</div>
+            <div>
+              <div style="font-weight:700;color:var(--blue-900);font-size:0.95rem;" data-i18n="about_award_title_3">Research Excellence Award</div>
+              <div style="font-size:0.82rem;color:var(--gray-500);" data-i18n="about_award_desc_3">American College of Cardiology, 2021</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:1rem;padding:1rem;background:var(--blue-50);border-radius:12px;border:1px solid var(--blue-100);">
+            <div style="font-size:1.8rem;flex-shrink:0;">📰</div>
+            <div>
+              <div style="font-weight:700;color:var(--blue-900);font-size:0.95rem;" data-i18n="about_award_title_4">47 Peer-Reviewed Publications</div>
+              <div style="font-size:0.82rem;color:var(--gray-500);" data-i18n="about_award_desc_4">NEJM, JAMA, The Lancet, and more</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 gsap-reveal">
+        <div class="section-label" data-i18n="about_philosophy_label">Philosophy</div>
+        <h2 class="section-title" data-i18n="about_philosophy_title">Our Care Philosophy</h2>
+        <blockquote style="border-left:4px solid var(--blue-500);padding-left:1.5rem;margin:1.5rem 0;font-family:var(--font-display);font-size:1.2rem;color:var(--blue-700);font-style:italic;" data-i18n="about_philosophy_quote">
+          "Medicine is not merely the treatment of disease - it is the restoration of hope, dignity, and quality of life."
+        </blockquote>
+        <p class="text-secondary mb-3" data-i18n="about_philosophy_p1">At our clinic, we believe in treating the whole person, not just the symptoms. Every patient receives a thorough evaluation and a personalized care plan developed collaboratively with their input and values in mind.</p>
+        <p class="text-secondary" data-i18n="about_philosophy_p2">We stay at the forefront of medical innovation while never losing sight of the fundamentals: listening carefully, communicating clearly, and caring deeply.</p>
+        <a href="schedule.html" class="btn-primary-blue mt-4" data-i18n="about_schedule_consultation">Schedule a Consultation →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  
+  <div class="container">
+    <div class="text-center mb-5">
+      <div class="section-label mx-auto" style="justify-content:center;" data-i18n="index_testimonials_label">Testimonials</div>
+      <h2 class="section-title" style="color:var(--blue-900);" data-i18n="about_testimonials_title">Patients Share Their Stories</h2>
+    </div>
+    <div class="row g-4 gsap-stagger">
+      <div class="col-md-4">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text" data-i18n="about_testimonial_1_text">"Dr. Smith's thorough approach revealed a heart condition that could have been serious. I am genuinely grateful for his thoroughness and expertise."</p>
+          <div class="testimonial-author">
+            <div class="t-avatar">DK</div>
+            <div><div class="t-name" data-i18n="about_testimonial_1_name">David Kim</div><div class="t-role" data-i18n="about_testimonial_1_role">Cardiology Patient</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text" data-i18n="about_testimonial_2_text">"The level of personal attention I receive every visit is extraordinary. Dr. Smith remembers details from our previous conversations. He truly cares."</p>
+          <div class="testimonial-author">
+            <div class="t-avatar">LM</div>
+            <div><div class="t-name" data-i18n="about_testimonial_2_name">Linda Martinez</div><div class="t-role" data-i18n="about_testimonial_2_role">Long-term Patient</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text" data-i18n="about_testimonial_3_text">"My whole family sees Dr. Smith - from my 80-year-old mother to my teenage son. The breadth of his expertise and warmth is remarkable."</p>
+          <div class="testimonial-author">
+            <div class="t-avatar">PW</div>
+            <div><div class="t-name" data-i18n="about_testimonial_3_name">Patricia Wong</div><div class="t-role" data-i18n="about_testimonial_3_role">Family Patient</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/components.js"></script>
+</body>
+</html>

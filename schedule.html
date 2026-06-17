@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schedule - Dr. John Smith</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏥</text></svg>">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/schedule.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+<body>
+
+<div id="nav-placeholder"></div>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-breadcrumb"><a href="index.html" data-i18n="nav_home">Home</a> / <span data-i18n="nav_schedule">Schedule</span></div>
+    <h1 class="page-hero-title" data-i18n="schedule_page_title">Book an Appointment</h1>
+    <p class="page-hero-sub" data-i18n="schedule_page_sub">Select your preferred date, time, and service below</p>
+  </div>
+</section>
+
+<section id="schedule" style="padding:5rem 0;">
+  <div class="container">
+    <div class="row g-4 align-items-start">
+      <div class="col-lg-8">
+        <div class="booking-card">
+          <div class="section-label mb-3" data-i18n="schedule_new_appointment">New Appointment</div>
+          <h2 class="section-title" style="font-size:1.6rem;margin-bottom:1.5rem;" data-i18n="schedule_fill_details">Fill in Your Details</h2>
+
+          <form onsubmit="validateBooking(event)">
+            <input type="hidden" id="selectedTime" value="">
+
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label class="form-label" data-i18n="form_first_name">First Name *</label>
+                <input type="text" class="form-control" data-i18n="form_first_name_placeholder" placeholder="John" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" data-i18n="form_last_name">Last Name *</label>
+                <input type="text" class="form-control" data-i18n="form_last_name_placeholder" placeholder="Smith" required>
+              </div>
+            </div>
+
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label class="form-label" data-i18n="form_email_address">Email Address *</label>
+                <input type="email" class="form-control" data-i18n="form_email_placeholder" placeholder="john@example.com" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" data-i18n="form_phone_number">Phone Number *</label>
+                <input type="tel" class="form-control" data-i18n="form_phone_placeholder" placeholder="+1 (555) 123-4567" required>
+              </div>
+            </div>
+
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label class="form-label" data-i18n="schedule_department_label">Department / Service *</label>
+                <select class="form-select" required>
+                  <option value="" data-i18n="schedule_service_placeholder">Select a service...</option>
+                  <option data-i18n="service_cardiology_title">Cardiology</option>
+                  <option data-i18n="service_neurology_title">Neurology</option>
+                  <option data-i18n="service_orthopedics_title">Orthopedics</option>
+                  <option data-i18n="service_general_medicine_title">General Medicine</option>
+                  <option data-i18n="service_pediatrics_title">Pediatrics</option>
+                  <option data-i18n="service_ophthalmology_title">Ophthalmology</option>
+                  <option data-i18n="service_vascular_title">Vascular Medicine</option>
+                  <option data-i18n="service_mental_health_title">Mental Health</option>
+                  <option data-i18n="service_lab_title">Laboratory & Diagnostics</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" data-i18n="schedule_appointment_type_label">Appointment Type *</label>
+                <select class="form-select" required>
+                  <option value="" data-i18n="schedule_type_placeholder">Select type...</option>
+                  <option data-i18n="schedule_type_new_patient">New Patient Visit</option>
+                  <option data-i18n="schedule_type_follow_up">Follow-up Consultation</option>
+                  <option data-i18n="schedule_type_annual_physical">Annual Physical</option>
+                  <option data-i18n="schedule_type_telehealth">Telehealth</option>
+                  <option data-i18n="schedule_type_urgent_care">Urgent Care</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label class="form-label" data-i18n="schedule_preferred_date">Preferred Date *</label>
+              <input type="date" class="form-control" id="appointmentDate" required
+                min="" style="max-width:280px;">
+            </div>
+
+            <div class="mb-4">
+              <label class="form-label" data-i18n="schedule_select_time_slot">Select Time Slot *</label>
+              <div class="time-slots">
+                <div class="time-slot">9:00 AM</div>
+                <div class="time-slot">9:30 AM</div>
+                <div class="time-slot busy">10:00 AM</div>
+                <div class="time-slot">10:30 AM</div>
+                <div class="time-slot">11:00 AM</div>
+                <div class="time-slot busy">11:30 AM</div>
+                <div class="time-slot">12:00 PM</div>
+                <div class="time-slot busy">12:30 PM</div>
+                <div class="time-slot">1:00 PM</div>
+                <div class="time-slot">1:30 PM</div>
+                <div class="time-slot">2:00 PM</div>
+                <div class="time-slot busy">2:30 PM</div>
+                <div class="time-slot">3:00 PM</div>
+                <div class="time-slot">3:30 PM</div>
+                <div class="time-slot">4:00 PM</div>
+                <div class="time-slot busy">4:30 PM</div>
+              </div>
+              <p style="font-size:0.78rem;color:var(--gray-400);margin-top:8px;">
+                <span style="display:inline-block;width:12px;height:12px;background:var(--gray-100);border:1px solid var(--gray-200);border-radius:3px;vertical-align:middle;"></span> <span data-i18n="schedule_busy">Busy</span> &nbsp;
+                <span style="display:inline-block;width:12px;height:12px;background:var(--blue-50);border:1.5px solid var(--blue-500);border-radius:3px;vertical-align:middle;margin-left:8px;"></span> <span data-i18n="schedule_selected">Selected</span>
+              </p>
+            </div>
+
+            <div class="mb-4">
+              <label class="form-label" data-i18n="schedule_additional_notes">Additional Notes</label>
+              <textarea class="form-control" rows="3" data-i18n="schedule_notes_placeholder" placeholder="Please describe your symptoms or reason for visit..."></textarea>
+            </div>
+
+            <div class="mb-4 d-flex align-items-start gap-2">
+              <input type="checkbox" id="consent" style="margin-top:3px;accent-color:var(--blue-600);" required>
+              <label for="consent" style="font-size:0.85rem;color:var(--gray-600);"><span data-i18n="schedule_consent_prefix">I consent to the clinic's</span> <a href="#" style="color:var(--blue-500);" data-i18n="footer_privacy">privacy policy</a> <span data-i18n="schedule_consent_suffix">and agree to receive appointment reminders via email and SMS.</span></label>
+            </div>
+
+            <button type="submit" class="btn-primary-blue">
+              <span><i class="fa-regular fa-calendar"></i></span> <span data-i18n="schedule_confirm_appointment">Confirm Appointment</span>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="booking-card mb-4">
+          <div class="section-label mb-3" data-i18n="schedule_clinic_hours">Clinic Hours</div>
+          <div class="d-flex flex-column gap-2">
+            <div class="d-flex justify-content-between py-2" style="border-bottom:1px solid var(--gray-100);">
+              <span style="font-size:0.88rem;color:var(--gray-700);font-weight:500;" data-i18n="schedule_hours_weekdays">Monday - Friday</span>
+              <span style="font-size:0.88rem;color:var(--blue-600);font-weight:600;">9:00 AM - 5:00 PM</span>
+            </div>
+            <div class="d-flex justify-content-between py-2" style="border-bottom:1px solid var(--gray-100);">
+              <span style="font-size:0.88rem;color:var(--gray-700);font-weight:500;" data-i18n="schedule_hours_saturday">Saturday</span>
+              <span style="font-size:0.88rem;color:var(--blue-600);font-weight:600;">10:00 AM - 2:00 PM</span>
+            </div>
+            <div class="d-flex justify-content-between py-2">
+              <span style="font-size:0.88rem;color:var(--gray-700);font-weight:500;" data-i18n="schedule_hours_sunday">Sunday</span>
+              <span style="font-size:0.88rem;color:var(--gray-400);font-weight:500;" data-i18n="schedule_hours_closed">Closed</span>
+            </div>
+          </div>
+          <div style="background:var(--blue-50);border-radius:10px;padding:1rem;margin-top:1rem;border:1px solid var(--blue-100);">
+            <div style="font-weight:700;color:var(--blue-700);font-size:0.9rem;margin-bottom:4px;" data-i18n="schedule_urgent_care_title"><i class="fa-solid fa-triangle-exclamation"></i> After-Hours Urgent Care</div>
+            <div style="font-size:0.82rem;color:var(--gray-500);" data-i18n="schedule_urgent_care_desc">For medical emergencies, please call 911 or visit the nearest ER. Our on-call physician can be reached at (555) 911-CARE</div>
+          </div>
+        </div>
+
+        <div class="booking-card mb-4">
+          <div class="section-label mb-3" data-i18n="schedule_what_to_bring">What to Bring</div>
+          <ul style="list-style:none;padding:0;font-size:0.88rem;color:var(--gray-600);display:flex;flex-direction:column;gap:10px;">
+            <li style="display:flex;align-items:center;gap:10px;"><span style="color:var(--blue-500);">✓</span> <span data-i18n="schedule_bring_item_1">Valid photo ID</span></li>
+            <li style="display:flex;align-items:center;gap:10px;"><span style="color:var(--blue-500);">✓</span> <span data-i18n="schedule_bring_item_2">Insurance card</span></li>
+            <li style="display:flex;align-items:center;gap:10px;"><span style="color:var(--blue-500);">✓</span> <span data-i18n="schedule_bring_item_3">List of current medications</span></li>
+            <li style="display:flex;align-items:center;gap:10px;"><span style="color:var(--blue-500);">✓</span> <span data-i18n="schedule_bring_item_4">Previous medical records</span></li>
+            <li style="display:flex;align-items:center;gap:10px;"><span style="color:var(--blue-500);">✓</span> <span data-i18n="schedule_bring_item_5">Insurance referral (if required)</span></li>
+            <li style="display:flex;align-items:center;gap:10px;"><span style="color:var(--blue-500);">✓</span> <span data-i18n="schedule_bring_item_6">Arrive 15 min early (new patients)</span></li>
+          </ul>
+        </div>
+
+        <div style="background:var(--blue-600);border-radius:var(--radius-lg);padding:1.5rem;color:white;">
+          <div style="font-weight:700;font-size:1rem;margin-bottom:0.5rem;" data-i18n="schedule_need_help"><i class="fa-solid fa-phone">Need Help?</i> </div>
+          <p style="font-size:0.85rem;opacity:0.85;margin-bottom:1rem;" data-i18n="schedule_need_help_desc">Our team is available to assist you with booking and any questions.</p>
+          <div style="font-size:1.1rem;font-weight:700;margin-bottom:4px;">(555) 123-4567</div>
+          <div style="font-size:0.82rem;opacity:0.7;" data-i18n="schedule_need_help_hours">Mon-Fri: 8 AM - 6 PM</div>
+          <a href="contact.html" style="display:inline-block;margin-top:1rem;background:rgba(255,255,255,0.2);color:white;padding:0.5rem 1.2rem;border-radius:50px;font-size:0.85rem;font-weight:600;text-decoration:none;"><span data-i18n="nav_cta">Contact Us</span> <span>→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/components.js"></script>
+<script>
+  document.getElementById('appointmentDate').min = new Date().toISOString().split('T')[0];
+</script>
+</body>
+</html>

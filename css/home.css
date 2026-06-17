@@ -1,0 +1,252 @@
+/* ===================================================
+   home.css — Home Page Styles
+   Includes: hero section, floating cards,
+             floating shapes, specialties strip
+   Requires: styles.css
+   =================================================== */
+
+
+/* ─── Hero Section ───────────────────────────────── */
+#hero {
+  min-height: calc(100vh - 68px);
+  background: var(--blue-50);
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--white);
+  border: 1px solid var(--blue-200);
+  border-radius: var(--radius-xl);
+  padding: 0.4rem 1rem;
+  font-size: 0.82rem;
+  color: var(--blue-600);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.hero-badge-dot {
+  width: 8px;
+  height: 8px;
+  background: #22c55e;
+  border-radius: 50%;
+  animation: blink 2s ease infinite;
+}
+
+.hero-title {
+  font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+  color: var(--blue-900);
+  margin-bottom: 1.25rem;
+}
+
+.hero-title em {
+  font-style: normal;
+  color: var(--blue-500);
+}
+
+.hero-subtitle {
+  font-size: 1.05rem;
+  color: var(--gray-500);
+  margin-bottom: 2rem;
+  max-width: 480px;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.hero-stat-num {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--blue-700);
+}
+
+.hero-stat-label {
+  font-size: 0.8rem;
+  color: var(--gray-500);
+  margin-top: 2px;
+}
+
+
+/* ─── Doctor Image ───────────────────────────────── */
+.hero-img-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-img-bg {
+  width: 380px;
+  height: 480px;
+  max-width: 100%;
+  background: var(--blue-100);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--shadow-xl);
+}
+
+.hero-img-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-img-placeholder {
+  width: 100%;
+  height: 100%;
+  background: var(--blue-200);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.hero-img-silhouette {
+  font-size: 12rem;
+  color: var(--blue-400);
+  line-height: 1;
+  padding-bottom: 0;
+}
+
+
+/* ─── Floating Cards ─────────────────────────────── */
+.float-card {
+  position: absolute;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 0.9rem 1.2rem;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--gray-200);
+  animation: floatY 3s ease-in-out infinite;
+}
+
+.float-card-patients {
+  left: -60px;
+  top: 40px;
+  animation-delay: 0s;
+}
+
+.float-card-calendar {
+  right: -40px;
+  bottom: 60px;
+  animation-delay: 1.5s;
+}
+
+.float-card-icon  { font-size: 1.4rem; margin-bottom: 4px; }
+.float-card-num   { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--blue-700); }
+.float-card-label { font-size: 0.75rem; color: var(--gray-500); }
+
+/* Mini calendar inside floating card */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  margin-top: 6px;
+}
+
+.cal-day {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  border-radius: 4px;
+  color: var(--gray-600);
+}
+
+.cal-day.header { font-weight: 600; color: var(--blue-500); font-size: 0.6rem; }
+.cal-day.active { background: var(--blue-600); color: white; border-radius: 50%; }
+.cal-day.today  { border: 1.5px solid var(--blue-400); border-radius: 50%; }
+
+
+/* ─── Floating Background Shapes ────────────────── */
+.shape {
+  position: absolute;
+  opacity: 0.07;
+  z-index: 0;
+  animation: floatShape 6s ease-in-out infinite;
+}
+
+.shape-1 {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: var(--blue-500);
+  top: -80px;
+  right: -80px;
+}
+
+.shape-2 {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--blue-400);
+  bottom: 10%;
+  left: -40px;
+  animation-delay: 2s;
+}
+
+.shape-3 {
+  width: 60px;
+  height: 60px;
+  background: var(--blue-600);
+  top: 30%;
+  right: 5%;
+  transform: rotate(45deg);
+  animation-delay: 4s;
+}
+
+
+/* ─── Specialties Strip ──────────────────────────── */
+#specialties-strip {
+  background: var(--blue-900);
+  padding: 1.2rem 0;
+  overflow: hidden;
+}
+
+.strip-inner {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  animation: marquee 20s linear infinite;
+  white-space: nowrap;
+}
+
+.strip-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--blue-200);
+  font-size: 0.85rem;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.strip-dot {
+  width: 5px;
+  height: 5px;
+  background: var(--blue-400);
+  border-radius: 50%;
+}
+
+
+/* ─── Responsive ─────────────────────────────────── */
+@media (max-width: 991px) {
+  .hero-img-wrap       { margin-top: 3rem; }
+  .float-card-patients { left: 10px; }
+  .float-card-calendar { right: 10px; }
+}
+
+@media (max-width: 768px) {
+  #hero { padding: 3rem 0; }
+}

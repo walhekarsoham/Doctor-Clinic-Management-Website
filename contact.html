@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Dr. John Smith</title>
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏥</text></svg>">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+
+<body>
+
+  <div id="nav-placeholder"></div>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-breadcrumb"><a href="index.html" data-i18n="nav_home">Home</a> / <span
+          data-i18n="nav_contact">Contact</span></div>
+      <h1 class="page-hero-title" data-i18n="contact_page_title">Get in Touch</h1>
+      <p class="page-hero-sub" data-i18n="contact_page_sub">We're here to help with all your healthcare needs</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="row g-4 align-items-start">
+        <div class="col-lg-4">
+          <div class="contact-info-box gsap-reveal">
+            <div class="section-label" data-i18n="contact_details_label">Contact Details</div>
+            <h2 class="section-title" style="font-size:1.6rem;margin-bottom:1.5rem;" data-i18n="contact_info_title"
+              data-i18n-html="true">We'd Love to<br>Hear From You</h2>
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <div class="contact-item-label" data-i18n="contact_address_label">Clinic Address</div>
+                <div class="contact-item-val" data-i18n="contact_address_value" data-i18n-html="true">123 Medical Center
+                  Drive<br>Suite 400, New York, NY 10001</div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
+              <div>
+                <div class="contact-item-label" data-i18n="contact_phone_label">Phone Number</div>
+                <div class="contact-item-val">(555) 123-4567</div>
+                <div style="font-size:0.78rem;opacity:0.7;margin-top:2px;" data-i18n="schedule_need_help_hours">Mon-Fri:
+                  8 AM - 6 PM</div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class="fa-regular fa-envelope"></i></div>
+              <div>
+                <div class="contact-item-label" data-i18n="contact_email_label">Email Address</div>
+                <div class="contact-item-val">info@drjohnsmith.com</div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class="fa-regular fa-clock"></i></div>
+              <div>
+                <div class="contact-item-label" data-i18n="contact_hours_label">Working Hours</div>
+                <div class="contact-item-val" data-i18n="contact_hours_value" data-i18n-html="true">Mon-Fri: 9 AM - 5
+                  PM<br>Saturday: 10 AM - 2 PM</div>
+              </div>
+            </div>
+            <div class="contact-item" style="border:none;padding-bottom:0;margin-bottom:0;">
+              <div class="contact-item-icon"><i class="fa-solid fa-car"></i></div>
+              <div>
+                <div class="contact-item-label" data-i18n="contact_parking_label">Parking</div>
+                <div class="contact-item-val" data-i18n="contact_parking_value">Free parking in Building C lot</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-8">
+          <div class="contact-form-card gsap-reveal">
+            <div class="section-label mb-3" data-i18n="contact_send_message">Send a Message</div>
+            <h2 class="section-title" style="font-size:1.5rem;margin-bottom:1.5rem;" data-i18n="contact_help_title">How
+              Can We Help?</h2>
+            <form onsubmit="validateContact(event)">
+              <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                  <label class="form-label" data-i18n="form_first_name">First Name *</label>
+                  <input type="text" class="form-control" data-i18n="form_first_name_placeholder" placeholder="John"
+                    required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" data-i18n="form_last_name">Last Name *</label>
+                  <input type="text" class="form-control" data-i18n="form_last_name_placeholder" placeholder="Smith"
+                    required>
+                </div>
+              </div>
+              <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                  <label class="form-label" data-i18n="form_email_address">Email Address *</label>
+                  <input type="email" class="form-control" data-i18n="form_email_placeholder"
+                    placeholder="john@example.com" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" data-i18n="form_phone_number_optional">Phone Number</label>
+                  <input type="tel" class="form-control" data-i18n="contact_phone_placeholder"
+                    placeholder="(555) 000-0000">
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label" data-i18n="contact_subject_label">Subject *</label>
+                <select class="form-select" required>
+                  <option value="" data-i18n="contact_subject_placeholder">Select a topic...</option>
+                  <option data-i18n="contact_subject_1">Appointment Inquiry</option>
+                  <option data-i18n="contact_subject_2">Insurance & Billing</option>
+                  <option data-i18n="contact_subject_3">Medical Records</option>
+                  <option data-i18n="contact_subject_4">General Question</option>
+                  <option data-i18n="contact_subject_5">Feedback / Complaint</option>
+                  <option data-i18n="contact_subject_6">Telehealth Setup</option>
+                  <option data-i18n="contact_subject_7">Other</option>
+                </select>
+              </div>
+              <div class="mb-4">
+                <label class="form-label" data-i18n="contact_message_label">Message *</label>
+                <textarea class="form-control" rows="5" data-i18n="contact_message_placeholder"
+                  placeholder="Please describe how we can help you..." required></textarea>
+              </div>
+              <div class="mb-4 d-flex align-items-start gap-2">
+                <input type="checkbox" id="privacy" style="margin-top:3px;accent-color:var(--blue-600);" required>
+                <label for="privacy" style="font-size:0.85rem;color:var(--gray-600);"><span
+                    data-i18n="contact_privacy_prefix">I agree to the</span> <a href="#" style="color:var(--blue-500);"
+                    data-i18n="footer_privacy">Privacy Policy</a> <span data-i18n="contact_privacy_suffix">and consent
+                    to having my data processed to respond to my inquiry.</span></label>
+              </div>
+              <button type="submit" class="btn-primary-blue">
+                <span><i class="fa-regular fa-message"></i></span> <span data-i18n="contact_send_button">Send Message</span>
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="map-embed mt-4">
+            <div style="border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--gray-200);">
+
+              <!-- Google Map -->
+              <iframe src="https://www.google.com/maps?q=123+Medical+Center+Drive+New+York&output=embed" width="100%"
+                height="280" style="border:0;" allowfullscreen="" loading="lazy">
+              </iframe>
+
+            </div>
+      </div>
+    </div>
+  </section>
+
+  <div style="background:var(--gray-50);padding:1.5rem 0;margin-bottom: 4rem;">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+        <div class="d-flex align-items-center gap-3">
+          <div style="font-size:2rem;"><i class="fa-solid fa-truck-medical"></i></div>
+          <div>
+            <div style="color:var(--blue-900);font-weight:700;font-size:1rem;" data-i18n="contact_emergency_title">Medical
+              Emergency?</div>
+            <div style="color:var(--blue-300);font-size:0.85rem;" data-i18n="contact_emergency_desc">Do not contact the
+              clinic. Call 911 immediately or go to your nearest emergency room.</div>
+          </div>
+        </div>
+        <a href="tel:911"
+          style="background:var(--blue-500);color:white;padding:0.6rem 1.5rem;border-radius:50px;font-weight:700;font-size:0.9rem;text-decoration:none;"
+          data-i18n="contact_call_911">Call 911 Now</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/components.js"></script>
+</body>
+
+</html>
